@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@500;600&family=Maven+Pro:wght@600;700&family=Montserrat:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
+* {
+    --font-counter: "Varela Round", "Azeret Mono", sans-serif;
+    --font-h2: "Maven Pro", sans-serif;
+    --font-h3: "Maven Pro", sans-serif;
+    --font-p: "Montserrat", sans-serif;
+  
+    --color-background-app: rgb(255, 77, 77);
+    --color-background-section: rgb(102, 102, 255);
+    --color-link-normal: rgb(64, 64, 64);
+    --color-link-hover: rgb(78, 78, 78);
+    --color-text-main: rgb(255, 255, 255);
+    --color-text-modal: rgb(45, 45, 45);
+    --color-button-normal: rgb(255, 255, 255);
+    --color-button-hover: rgb(230, 230, 230);
+  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: var(--font-p);
+  }
+  
+  body {
+    position: relative;
+  }
+  
+  section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  

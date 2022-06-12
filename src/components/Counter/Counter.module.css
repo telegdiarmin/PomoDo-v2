@@ -1,0 +1,7 @@
+.counter {
+  height: 100vh;
+  padding: 10%;
+  align-items: center;
+  text-align: center;
+  background-color: var(--color-background-app);
+}

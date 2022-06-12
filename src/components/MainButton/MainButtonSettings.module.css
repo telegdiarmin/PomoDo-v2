@@ -1,0 +1,13 @@
+.mainButtonSettings {
+    margin-left: 8px;
+    color: var(--color-button-normal);
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s;
+  }
+  
+  .mainButtonSettings:hover {
+    color: var(--color-button-hover);
+    transform: rotate(-180deg);
+  }
