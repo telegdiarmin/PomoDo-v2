@@ -1,10 +1,22 @@
+import { useDispatch } from "react-redux";
+
 import MainButton from "../MainButton/MainButton";
 import MainButtonBgr from "../MainButton/MainButtonBgr";
 import MainButtonSettings from "../MainButton/MainButtonSettings";
-import classes from "./Counter.module.css"
+import ArrowDropdown from "../UI/ArrowDropdown";
 import CounterFrame from "./CounterFrame";
+import classes from "./Counter.module.css"
+
+import { aboutSectionActions } from "../../store/index";
 
 const Counter = () => {
+
+    const dispatch = useDispatch();
+    const toggleAboutSectionHandler = () => {
+        dispatch(aboutSectionActions.toggleAboutSection());
+        console.log("Visibility switched!")
+    }
+
     return (
         <section className={classes.counter}>
             <CounterFrame/>
@@ -12,6 +24,7 @@ const Counter = () => {
                 <MainButton></MainButton>
                 <MainButtonSettings/>
             </MainButtonBgr>
+            <ArrowDropdown onClick={toggleAboutSectionHandler}/>
         </section>
     )
 }

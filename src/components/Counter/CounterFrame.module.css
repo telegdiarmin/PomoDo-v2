@@ -9,3 +9,11 @@
     border-radius: 16px;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
   }
+
+  @media (max-width: 48rem) {
+    .counter-frame {
+      width: 60%;
+      margin-top: 20%;
+    }
+  }
+  

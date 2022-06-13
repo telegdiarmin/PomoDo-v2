@@ -1,7 +1,17 @@
 .counter {
   height: 100vh;
-  padding: 10%;
+  padding-top: 10%;
+  padding-right: 10%;
+  padding-left: 10%;
+  padding-bottom: 1rem;
   align-items: center;
   text-align: center;
   background-color: var(--color-background-app);
 }
+
+@media (max-width: 48rem) {
+  .counter {
+    font-size: 12vw;
+  }
+}
+

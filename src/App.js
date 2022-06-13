@@ -1,11 +1,15 @@
 import { Fragment } from "react";
-import classes from "./App.module.css";
+import { useSelector } from "react-redux";
+import About from "./components/About/About";
 import Counter from "./components/Counter/Counter";
 
 function App() {
+  const isVisible = useSelector((state) => state.about.isVisible);
+
   return (
-    <Fragment className={classes.App}>
-      <Counter/>
+    <Fragment>
+      <Counter />
+      {isVisible && <About />}
     </Fragment>
   );
 }

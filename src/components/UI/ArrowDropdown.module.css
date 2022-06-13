@@ -1,0 +1,20 @@
+.arrowDropdown {
+  margin-top: auto;
+  font-size: 3rem;
+  color: var(--color-button-normal);
+  animation: bounce 0.8s infinite alternate;
+  cursor: pointer;
+}
+
+.arrowDropdown:hover {
+  color: var(--color-button-hover);
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
