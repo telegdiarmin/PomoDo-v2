@@ -9,13 +9,15 @@ import classes from "./Counter.module.css"
 
 import { aboutSectionActions } from "../../store/index";
 
-const Counter = () => {
+const Counter = ({aboutRef}) => {
 
     const dispatch = useDispatch();
     const toggleAboutSectionHandler = () => {
         dispatch(aboutSectionActions.toggleAboutSection());
-        console.log("Visibility switched!")
+        console.log("Visibility switched!");
+        aboutRef.current.scrollIntoView()
     }
+
 
     return (
         <section className={classes.counter}>

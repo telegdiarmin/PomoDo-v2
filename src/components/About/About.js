@@ -1,12 +1,13 @@
-import { Fragment } from "react";
+import { Fragment, forwardRef } from "react";
 import classes from "./About.module.css";
 import AboutArticle from "./AboutArticle";
 import Footer from "./Footer";
 
-const About = () => {
+const About = forwardRef((props, ref) => {
+
   return (
     <Fragment>
-      <section className={classes.about}>
+      <section className={classes.about} ref={ref}>
         <AboutArticle>
           <h2>Mi az a pomodoro?</h2>
           <div></div>
@@ -39,7 +40,7 @@ const About = () => {
           <p>
             {" "}
             Az alkalmazást tanulási céllal
-            <em>Telegdi Ármin</em> fejleszti. Vedd fel vele a kapcsolatot a
+            <em>&nbsp;Telegdi Ármin</em> fejleszti. Vedd fel vele a kapcsolatot a
             <a href="https://github.com/telegdiarmin">&nbsp;GitHub-on!</a>{" "}
             Minden jog fenntartva!
           </p>
@@ -54,6 +55,6 @@ const About = () => {
       <Footer/>
     </Fragment>
   );
-};
+});
 
 export default About;
