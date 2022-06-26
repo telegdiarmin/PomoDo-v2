@@ -1,11 +1,11 @@
 import classes from "./MainButton.module.css";
 
-const mainButtonText = "START";
-
-const MainButton = () => {
-    return (
-        <button className={classes.mainButton}>{mainButtonText}</button>
-    )
-}
+const MainButton = (props) => {
+  return (
+    <button className={classes.mainButton} onClick={props.onClick}>
+      {props.mainButtonText}
+    </button>
+  );
+};
 
 export default MainButton;

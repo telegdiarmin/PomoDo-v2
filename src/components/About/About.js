@@ -1,13 +1,18 @@
-import { Fragment, forwardRef } from "react";
+import { Fragment, useEffect, useRef } from "react";
 import classes from "./About.module.css";
 import AboutArticle from "./AboutArticle";
 import Footer from "./Footer";
 
-const About = forwardRef((props, ref) => {
+const About = () => {
+  const aboutRef = useRef();
+
+  useEffect(() => {
+    aboutRef.current.scrollIntoView();
+  }, []);
 
   return (
     <Fragment>
-      <section className={classes.about} ref={ref}>
+      <section className={classes.about} ref={aboutRef}>
         <AboutArticle>
           <h2>Mi az a pomodoro?</h2>
           <div></div>
@@ -40,8 +45,8 @@ const About = forwardRef((props, ref) => {
           <p>
             {" "}
             Az alkalmazást tanulási céllal
-            <em>&nbsp;Telegdi Ármin</em> fejleszti. Vedd fel vele a kapcsolatot a
-            <a href="https://github.com/telegdiarmin">&nbsp;GitHub-on!</a>{" "}
+            <em>&nbsp;Telegdi Ármin</em> fejleszti. Vedd fel vele a kapcsolatot
+            a<a href="https://github.com/telegdiarmin">&nbsp;GitHub-on!</a>{" "}
             Minden jog fenntartva!
           </p>
           <p>
@@ -52,9 +57,9 @@ const About = forwardRef((props, ref) => {
           </p>
         </AboutArticle>
       </section>
-      <Footer/>
+      <Footer />
     </Fragment>
   );
-});
+};
 
 export default About;

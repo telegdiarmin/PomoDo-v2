@@ -1,19 +1,9 @@
-import { createSlice, configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./counter";
-
-const aboutSectionSlice = createSlice({
-  name: "about",
-  initialState: { isVisible: false },
-  reducers: {
-    toggleAboutSection(state) {
-      state.isVisible = !state.isVisible;
-    },
-  },
-});
+import { configureStore } from "@reduxjs/toolkit";
+import counterReducer from "./counter-slice";
+import uiReducer from "./ui-slice"
 
 const store = configureStore({
-  reducer: { counter: counterReducer, about: aboutSectionSlice.reducer },
+  reducer: { counter: counterReducer, ui: uiReducer },
 });
 
-export const aboutSectionActions = aboutSectionSlice.actions;
 export default store;
