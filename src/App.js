@@ -4,7 +4,7 @@ import About from "./components/About/About";
 import Counter from "./components/Counter/Counter";
 
 function App() {
-  const isAboutSectionVisible = useSelector((state) => state.ui.isAboutSectionVisible);
+  const isAboutSectionVisible = useSelector((state) => state.counter.isAboutSectionVisible);
 
   return (
     <Fragment>
