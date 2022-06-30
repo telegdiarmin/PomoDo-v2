@@ -7,3 +7,8 @@ export const formatTime = (inputTime) => {
   const formattedTime = `${minutes}:${seconds}`;
   return formattedTime;
 };
+
+export const millisecondsToMinutes = (milliseconds) => {
+  return milliseconds / 60 / 1000;
+}
+;

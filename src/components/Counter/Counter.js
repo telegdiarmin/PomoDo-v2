@@ -37,6 +37,10 @@ const Counter = () => {
     console.log("Visibility switched!");
   };
 
+  const settingsButtonClickHandler = () => {
+    dispatch(uiActions.toggleSettingsModal());
+  }
+
   return (
     <section className={classes.counter} ref={counterRef}>
       <CounterFrame />
@@ -45,7 +49,7 @@ const Counter = () => {
           onClick={mainButtonClickHandler}
           mainButtonText={isRunning ? "STOP" : "START"}
         ></MainButton>
-        <MainButtonSettings />
+        <MainButtonSettings onClick={settingsButtonClickHandler}/>
       </MainButtonBgr>
       <ArrowDropdown onClick={toggleAboutSectionHandler} />
     </section>

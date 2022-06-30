@@ -1,0 +1,62 @@
+.settingsModal {
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  z-index: 100;
+  width: 50%;
+  padding: 2rem;
+}
+
+.settingsModal ul {
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.settingsModal li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.settingsModal li:first-child {
+  margin-top: 0;
+}
+
+.settingsModal li h3 {
+  font-size: 1.2rem;
+}
+
+.settingsModal li p {
+  font-family: var(--font-settings-p);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.settingsModal .closeBtn {
+  margin-left: auto;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+  cursor: pointer;
+}
+
+.settingsModal .closeBtn:hover {
+  transform: rotate(-180deg);
+}
+
+.settingsModal .submitBtn {
+  margin-left: auto;
+  width: 80px;
+  background-color: rgb(120, 120, 120);
+}
+
+.settingsModal .submitBtn:hover {
+  background-color: rgb(100, 100, 100);
+}
+
+.noscroll {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}

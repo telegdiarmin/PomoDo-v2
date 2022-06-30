@@ -8,8 +8,7 @@ import classes from "./CounterDisplay.module.css";
 const CounterDisplay = () => {
   const remainingTime = useSelector((state) => state.counter.remainingTime);
   const timerDuration = useSelector((state) => state.counter.timerDuration)
-  // const timerDuration = useSelector((state) => state.counter.timerDuration);
-
+  
   const [displayTime, setDisplayTime] = useState(formatTime(timerDuration));
 
   useEffect(()=>{
