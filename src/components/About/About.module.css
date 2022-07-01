@@ -2,4 +2,5 @@
     background-color: var(--color-background-section);
     color: var(--color-text-main);
     padding: 3rem 20%;
+    font-family: var(--font-p);
   }

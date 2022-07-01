@@ -11,8 +11,8 @@
   }
 
   @media (max-width: 48rem) {
-    .counter-frame {
-      width: 60%;
+    .counterFrame {
+      width: 100%;
       margin-top: 20%;
     }
   }

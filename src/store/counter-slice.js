@@ -2,6 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 //Default timer duration for testing, minutes * seconds * milliseconds
 const TIMER_DEFAULT_DURATION = 5 * 60 * 1000;
+export const ALARMS = [
+  { key: 0, value: "leapfrog", label: "Leapfrog" },
+  { key: 1, value: "marimba", label: "Marimba" },
+  { key: 2, value: "twinBell", label: "Twin Bell" },
+];
 
 const initialCounterState = {
   isRunning: false,
@@ -13,6 +18,7 @@ const initialCounterState = {
   stopTime: undefined,
   remainingTime: null,
   intervalId: undefined,
+  alarm: ALARMS[0]
 };
 
 const counterSlice = createSlice({
@@ -31,12 +37,12 @@ const counterSlice = createSlice({
     setStartTime(state, action) {
       state.startTime = action.payload;
     },
-    // setStopTime(state, action) {
-    //   state.stopTime = action.payload;
-    // },
     updateRemainingTime(state, action) {
       state.remainingTime = action.payload;
     },
+    setAlarm(state, action){
+      state.alarm = action.payload;
+    }
   },
 });
 

@@ -13,17 +13,19 @@ import AddIcon from "@mui/icons-material/Add";
 
 import classes from "./SettingsModal.module.css";
 
-import { counterActions } from "../../store/counter-slice";
+import { ALARMS, counterActions } from "../../store/counter-slice";
 import { uiActions } from "../../store/ui-slice";
 import { millisecondsToMinutes } from "../../utils/utils";
 
 const SettingsModal = (props) => {
   const dispatch = useDispatch();
 
+  const options = ALARMS;
   const timerDuration = useSelector((state) => state.counter.timerDuration);
   const [timerInMinutes, setTimerInMinutes] = useState(
     millisecondsToMinutes(timerDuration)
   );
+  const [selectedAlarm, setSelectedAlarm] = useState(null);
 
   useEffect(() => {
     setTimerInMinutes(millisecondsToMinutes(timerDuration));
@@ -44,19 +46,16 @@ const SettingsModal = (props) => {
     dispatch(uiActions.toggleSettingsModal());
   };
 
-  const submitSettingsHandler = () => {
-    dispatch(counterActions.updateRemainingTime(timerDuration));
-    closeModalHandler();
+  const selectAlarmHandler = (alarm) => {
+    console.log(alarm)
+    setSelectedAlarm(alarm);
   };
 
-  const alarmSelectHandler = (event) => {
-    console.log(event.target.value)
-  }
-
-  const options = [
-    { key: 0, value: "test", label: "Test" },
-    { key: 1, value: "test 2", label: "Test 2" },
-  ];
+  const submitSettingsHandler = () => {
+    dispatch(counterActions.updateRemainingTime(timerDuration));
+    dispatch(counterActions.setAlarm(selectedAlarm));
+    closeModalHandler();
+  };
 
   return (
     <Backdrop onClick={closeModalHandler}>
@@ -74,7 +73,7 @@ const SettingsModal = (props) => {
             <ControlButton onClick={decrTimerHandler}>
               <RemoveIcon />
             </ControlButton>
-            <p>{timerInMinutes} min</p>
+            <p className={classes.timerDuration}>{timerInMinutes} min</p>
             <ControlButton onClick={incrTimerHandler}>
               <AddIcon />
             </ControlButton>
@@ -83,10 +82,18 @@ const SettingsModal = (props) => {
             <h3>Hangjelzés</h3>
           </li>
           <li>
-            <MenuDropdown options={options} onChange={alarmSelectHandler} />
+            <MenuDropdown
+              options={options}
+              defaultOption={options[0]}
+              onOptionSelect={selectAlarmHandler}
+            />
           </li>
           <li>
-            <Button className={classes.submitBtn} title={"OK"} onClick={submitSettingsHandler}/>
+            <Button
+              className={classes.submitBtn}
+              title={"OK"}
+              onClick={submitSettingsHandler}
+            />
           </li>
         </ul>
       </Card>
