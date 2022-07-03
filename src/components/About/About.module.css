@@ -1,6 +1,12 @@
 .about {
-    background-color: var(--color-background-section);
-    color: var(--color-text-main);
-    padding: 3rem 20%;
-    font-family: var(--font-p);
+  background-color: var(--color-background-section);
+  color: var(--color-text-main);
+  padding: 3rem 25%;
+  font-family: var(--font-p);
+}
+
+@media (max-width: 48rem) {
+  .about {
+    padding: 3rem 5%;
   }
+}

@@ -22,7 +22,7 @@ const About = () => {
             feladatokat egy időzítő segítségével kisebb egységekre - szakaszokra
             - bontsa, ezzel növelve a hatékonyságot. Az egyes szakaszok hossza
             hagyományosan 25 perc, melyeket rövid szünetek követnek. A szakaszok
-            neve <em>"pomodoro"</em>, a paradicsom olasz kifejezése alapján,
+            neve <em>pomodoro</em>, a paradicsom olasz kifejezése alapján,
             ezzel utalva arra a paradicsom alakú konyhai időzítőre, melyet
             Cirillo egyetemistaként használt. Olvass róla többet a
             <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">

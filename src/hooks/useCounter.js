@@ -2,12 +2,16 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { counterActions } from "../store/counter-slice";
 
+import { useAlarm } from "./useAlarm";
+
 export const useCounter = () => {
   const dispatch = useDispatch();
-  // const isRunning = useSelector((state) => state.counter.isRunning);
-  // const startTime = useSelector((state) => state.counter.startTime);
-  // const timerDuration = useSelector((state) => state.counter.timerDuration);
-  const {isRunning, startTime, timerDuration} = useSelector((state) => state.counter);
+  const { isRunning, startTime, timerDuration, alarm } = useSelector(
+    (state) => state.counter
+  );
+
+  const { selectedAlarm } = useAlarm(alarm);
+
   const counterInterval = useRef();
 
   const [remainingTime, setRemainingTime] = useState(timerDuration);
@@ -49,9 +53,10 @@ export const useCounter = () => {
     console.log("Updated remaining time: " + updatedRemainingTime);
     saveTimer(updatedRemainingTime);
   };
-  
+
   const finishTimer = () => {
     resetTimer();
+    selectedAlarm.play();
     console.log("Finished!");
   };
 

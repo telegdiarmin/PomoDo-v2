@@ -10,5 +10,4 @@ export const formatTime = (inputTime) => {
 
 export const millisecondsToMinutes = (milliseconds) => {
   return milliseconds / 60 / 1000;
-}
-;
+};

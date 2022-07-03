@@ -9,9 +9,12 @@
   background-color: var(--color-background-app);
 }
 
+.arrowDropdownActive {
+  transform: rotate(-180deg);
+}
+
 @media (max-width: 48rem) {
   .counter {
     font-size: 12vw;
   }
 }
-

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import MainButton from "../MainButton/MainButton";
@@ -21,6 +21,9 @@ const Counter = () => {
   const counterRef = useRef();
 
   const isRunning = useSelector((state) => state.counter.isRunning);
+  const isAboutSectionVisible = useSelector(
+    (state) => state.ui.isAboutSectionVisible
+  );
 
   console.log("Component loaded!");
   console.log("Counter is running: " + isRunning);
@@ -39,19 +42,23 @@ const Counter = () => {
 
   const settingsButtonClickHandler = () => {
     dispatch(uiActions.toggleSettingsModal());
-  }
+  };
 
   return (
-    <section className={classes.counter} ref={counterRef}>
+    <section className={classes.counter}>
+      <div ref={counterRef} />
       <CounterFrame />
       <MainButtonBgr>
         <MainButton
           onClick={mainButtonClickHandler}
           mainButtonText={isRunning ? "STOP" : "START"}
         ></MainButton>
-        <MainButtonSettings onClick={settingsButtonClickHandler}/>
+        <MainButtonSettings onClick={settingsButtonClickHandler} />
       </MainButtonBgr>
-      <ArrowDropdown onClick={toggleAboutSectionHandler} />
+      <ArrowDropdown
+        onClick={toggleAboutSectionHandler}
+        className={isAboutSectionVisible ? classes.arrowDropdownActive : ""}
+      />
     </section>
   );
 };

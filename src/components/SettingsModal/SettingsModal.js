@@ -84,7 +84,7 @@ const SettingsModal = (props) => {
           <li>
             <MenuDropdown
               options={options}
-              defaultOption={options[0]}
+              defaultOption={options[2]}
               onOptionSelect={selectAlarmHandler}
             />
           </li>
