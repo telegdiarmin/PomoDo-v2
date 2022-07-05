@@ -6,7 +6,32 @@
   padding-bottom: 1rem;
   align-items: center;
   text-align: center;
-  background-color: var(--color-background-app);
+  --webkit-transition: background-color 2s linear;
+  transition: background-color 0.5s linear;
+}
+
+.modeBackgroundTimer {
+  background-color: var(--color-background-app-timer);
+}
+
+.modeBackgroundShortBreak {
+  background-color: var(--color-background-app-shortBreak);
+}
+
+.modeBackgroundLongBreak {
+  background-color: var(--color-background-app-longBreak);
+}
+
+.modeMainButtonTimer {
+  color: var(--color-background-app-timer);
+}
+
+.modeMainButtonShortBreak {
+  color: var(--color-background-app-shortBreak);
+}
+
+.modeMainButtonLongBreak {
+  color: var(--color-background-app-longBreak);
 }
 
 .arrowDropdownActive {

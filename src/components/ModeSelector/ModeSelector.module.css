@@ -1,0 +1,41 @@
+.modeSelector button {
+  width: 100%;
+  border: none;
+  font-family: var(--font-h2);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.5s linear;
+}
+
+.buttonInactive {
+  background: none;
+}
+
+.buttonActive {
+  background-color: white;
+  border-radius: inherit;
+}
+
+.buttonInactiveTimer {
+  color: var(--color-text-app-inactive-timer);
+}
+
+.buttonInactiveShortBreak {
+  color: var(--color-text-app-inactive-shortBreak);
+}
+
+.buttonInactiveLongBreak {
+  color: var(--color-text-app-inactive-longBreak);
+}
+
+.buttonActiveTimer {
+  color: var(--color-background-app-timer);
+}
+
+.buttonActiveShortBreak {
+  color: var(--color-background-app-shortBreak);
+}
+
+.buttonActiveLongBreak {
+  color: var(--color-background-app-longBreak);
+}

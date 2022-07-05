@@ -1,17 +1,18 @@
 .mainButton {
-    width: 10rem;
-    height: 60px;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--color-background-app);
-    text-transform: uppercase;
-    background-color: var(--color-button-normal);
-    border: none;
-    border-radius: 30px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-  }
-  
-  .mainButton:hover {
-    background-color: var(--color-button-hover);
-  }
+  width: 10rem;
+  height: 60px;
+  font-family: var(--font-h2);
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: var(--color-button-normal);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  transition: color 0.5s linear;
+  cursor: pointer;
+}
+
+.mainButton:hover {
+  background-color: var(--color-button-hover);
+}

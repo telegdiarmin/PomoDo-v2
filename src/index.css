@@ -8,12 +8,17 @@
   --font-p: "Montserrat", sans-serif;
   --font-settings-p: "Azaret Mono", monospace;
 
-  --color-background-app: rgb(255, 77, 77);
+  --color-background-app-timer: rgb(210, 70, 70);
+  --color-background-app-shortBreak:rgb(120, 130, 140);
+  --color-background-app-longBreak: rgb(140, 190, 165);
   --color-background-section: rgb(102, 102, 255);
   --color-link-normal: rgb(64, 64, 64);
   --color-link-hover: rgb(78, 78, 78);
   --color-text-main: rgb(255, 255, 255);
   --color-text-modal: rgb(45, 45, 45);
+  --color-text-app-inactive-timer: rgb(200, 30, 30);
+  --color-text-app-inactive-shortBreak: rgb(120, 130, 140);
+  --color-text-app-inactive-longBreak: rgb(130, 160, 140);
   --color-button-normal: rgb(255, 255, 255);
   --color-button-hover: rgb(230, 230, 230);
 

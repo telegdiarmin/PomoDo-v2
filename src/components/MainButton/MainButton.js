@@ -2,7 +2,10 @@ import classes from "./MainButton.module.css";
 
 const MainButton = (props) => {
   return (
-    <button className={classes.mainButton} onClick={props.onClick}>
+    <button
+      className={`${classes.mainButton} ${props.className}`}
+      onClick={props.onClick}
+    >
       {props.mainButtonText}
     </button>
   );

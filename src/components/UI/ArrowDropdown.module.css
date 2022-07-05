@@ -4,7 +4,6 @@
   color: var(--color-button-normal);
   animation: bounce 0.8s infinite alternate;
   cursor: pointer;
-  /* transform: rotate(-180deg); */
 }
 
 .arrowDropdown:hover {

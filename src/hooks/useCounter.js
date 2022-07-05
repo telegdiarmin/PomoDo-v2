@@ -6,14 +6,21 @@ import { useAlarm } from "./useAlarm";
 
 export const useCounter = () => {
   const dispatch = useDispatch();
-  const { isRunning, startTime, timerDuration, alarm } = useSelector(
-    (state) => state.counter
-  );
+  const {
+    isRunning,
+    mode,
+    startTime,
+    timerDuration,
+    shortBreakDuration,
+    longBreakDuration,
+    alarm,
+  } = useSelector((state) => state.counter);
 
   const { selectedAlarm } = useAlarm(alarm);
 
   const counterInterval = useRef();
 
+  const [duration, setDuration] = useState(timerDuration);
   const [remainingTime, setRemainingTime] = useState(timerDuration);
 
   useEffect(() => {
@@ -38,6 +45,31 @@ export const useCounter = () => {
     console.log("Remaining time updated!");
   }, [remainingTime, dispatch]);
 
+  useEffect(() => {
+    switch (mode) {
+      case "timer":
+        setDuration(timerDuration);
+        console.log("Kutya!");
+        break;
+      case "shortBreak":
+        setDuration(shortBreakDuration);
+        console.log("Cica!");
+        break;
+      case "longBreak":
+        setDuration(longBreakDuration);
+        console.log("Mérési hiba!");
+        break;
+    }
+    if (isRunning) {
+      dispatch(counterActions.changeIsRunning());
+    }
+    stopTimer();
+  }, [mode]);
+
+  useEffect(() => {
+    setRemainingTime(duration);
+  }, [duration]);
+
   const startTimer = () => {
     counterInterval.current = setInterval(runTimer, 1000);
     console.log("Started!");
@@ -61,7 +93,8 @@ export const useCounter = () => {
   };
 
   const resetTimer = () => {
-    setRemainingTime(timerDuration);
+    // setRemainingTime(timerDuration);
+    setRemainingTime(duration);
     dispatch(counterActions.updateRemainingTime(remainingTime));
     clearInterval(counterInterval.current);
   };
@@ -75,7 +108,8 @@ export const useCounter = () => {
     const currentTime = calculateCurrentTime();
     const elapsedTime = currentTime - startTime;
     console.log("Elapsed time: " + elapsedTime);
-    return timerDuration - elapsedTime;
+    // return timerDuration - elapsedTime;
+    return duration - elapsedTime;
   };
 
   const saveTimer = (updatedRemainingTime) => {
