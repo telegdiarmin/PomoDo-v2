@@ -1,0 +1,40 @@
+.SelectorLabel input {
+  display: none;
+}
+
+.SelectorLabel  {
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: none;
+  font-family: var(--font-h2);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.5s linear;
+}
+
+.sliderActiveTimer {
+  color: var(--color-background-app-timer);
+}
+
+.sliderActiveShortBreak {
+  color: var(--color-background-app-shortBreak);
+}
+
+.sliderActiveLongBreak {
+  color: var(--color-background-app-longBreak);
+}
+
+.sliderInactiveTimer {
+  color: var(--color-text-app-inactive-timer);
+}
+
+.sliderInactiveShortBreak {
+  color: var(--color-text-app-inactive-shortBreak);
+}
+
+.sliderInactiveLongBreak {
+  color: var(--color-text-app-inactive-longBreak);
+}

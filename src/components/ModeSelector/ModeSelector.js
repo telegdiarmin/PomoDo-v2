@@ -6,79 +6,43 @@ import SelectorBackground from "./SelectorBackground";
 import classes from "./ModeSelector.module.css";
 
 import { counterActions } from "../../store/counter-slice";
+import SelectorLabel from "./SelectorLabel";
 
 const ModeSelector = () => {
   const mode = useSelector((state) => state.counter.mode);
   const dispatch = useDispatch();
 
-  // const [mode, setMode] = useState(timerMode);
   const selectorButtonClickHandler = (event) => {
     dispatch(counterActions.setTimerMode(event.target.value));
   };
 
-  // useEffect(() => {
-  //   setMode(timerMode);
-  // }, [timerMode]);
-
   return (
     <SelectorBackground className={classes.modeSelector}>
-      <button
-        value={"timer"}
+      <SelectorLabel
+        mode={mode}
+        thisMode={"timer"}
+        title={"Pomodoro"}
         onClick={selectorButtonClickHandler}
-        className={`${
-          mode === "timer"
-            ? (`${classes.buttonActive} ${classes.buttonActiveTimer}`)
-            : ""
-        } ${
-          mode === "shortBreak"
-            ? (`${classes.buttonInactive} ${classes.buttonInactiveShortBreak}`)
-            : ""
-        } ${
-          mode === "longBreak"
-            ? (`${classes.buttonInactive} ${classes.buttonInactiveLongBreak}`)
-            : ""
-        }`}
-      >
-        Pomodoro
-      </button>
-      <button
-        value={"shortBreak"}
+      />
+      <SelectorLabel
+        mode={mode}
+        thisMode={"shortBreak"}
+        title={"Rövid szünet"}
         onClick={selectorButtonClickHandler}
-        className={`${
-          mode === "timer"
-            ? (`${classes.buttonInactive} ${classes.buttonInactiveTimer}`)
-            : ""
-        } ${
-          mode === "shortBreak"
-            ? (`${classes.buttonActive} ${classes.buttonActiveShortBreak}`)
-            : ""
-        } ${
-          mode === "longBreak"
-            ? (`${classes.buttonInactive} ${classes.buttonInactiveLongBreak}`)
-            : ""
-        }`}
-      >
-        Rövid szünet
-      </button>
-      <button
-        value={"longBreak"}
+      />
+      <SelectorLabel
+        mode={mode}
+        thisMode={"longBreak"}
+        title={"Hosszú szünet"}
         onClick={selectorButtonClickHandler}
-        className={`${
-          mode === "timer"
-            ? (`${classes.buttonInactive} ${classes.buttonInactiveTimer}`)
-            : ""
-        } ${
-          mode === "shortBreak"
-            ? (`${classes.buttonInactive} ${classes.buttonInactiveShortBreak}`)
-            : ""
-        } ${
-          mode === "longBreak"
-            ? (`${classes.buttonActive} ${classes.buttonActiveLongBreak}`)
-            : ""
+      />
+      <div
+        className={`${classes.toggleSlider} ${
+          mode === "timer" ? `${classes.sliderTimer}` : ""
+        } ${mode === "shortBreak" ? `${classes.sliderShortBreak}` : ""} ${
+          mode === "longBreak" ? `${classes.sliderLongBreak}` : ""
         }`}
-      >
-        Hosszú szünet
-      </button>
+      ></div>
     </SelectorBackground>
   );
 };
