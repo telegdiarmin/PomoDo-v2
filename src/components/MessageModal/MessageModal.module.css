@@ -1,0 +1,50 @@
+.messageModal {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 25rem;
+  padding: 2rem;
+}
+
+.messageModal h2 {
+  font-family: var(--font-h2);
+}
+
+.messageModal p {
+  margin-top: 1rem;
+  font-family: var(--font-p);
+}
+
+.messageModal .dismissBtn {
+  margin-top: 1rem;
+  margin-left: auto;
+  width: 80px;
+  background-color: rgb(160, 220, 160);
+}
+
+.messageModal .dismissBtn:hover {
+  background-color: rgb(140, 200, 140);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.messageModal .closeBtn {
+  margin-left: auto;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+  cursor: pointer;
+}
+
+.messageModal .closeBtn:hover {
+  transform: rotate(-180deg);
+}
+
+@media (max-width: 48rem) {
+  .messageModal {
+    width: 80%;
+  }
+}

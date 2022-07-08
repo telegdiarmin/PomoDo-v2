@@ -7,9 +7,13 @@
   width: calc(100% / 3);
   height: inherit;
   border-radius: inherit;
-  background-color: white;
+  background-color: var(--color-button-normal);
   transition: left 0.5s ease;
 }
+/* 
+.toggleSlider:hover {
+  background-color: var(--color-button-hover);
+} */
 
 .sliderTimer {
   left: 0;

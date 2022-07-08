@@ -43,6 +43,18 @@ const counterSlice = createSlice({
     decreaseTimerDuration(state) {
       state.timerDuration = state.timerDuration - 5 * 60 * 1000;
     },
+    increaseShortBreakDuration(state) {
+      state.shortBreakDuration = state.shortBreakDuration + 5 * 60 * 1000;
+    },
+    decreaseShortBreakDuration(state) {
+      state.shortBreakDuration = state.shortBreakDuration - 5 * 60 * 1000;
+    },
+    increaseLongBreakDuration(state) {
+      state.longBreakDuration = state.longBreakDuration + 5 * 60 * 1000;
+    },
+    decreaseLongBreakDuration(state) {
+      state.longBreakDuration = state.longBreakDuration - 5 * 60 * 1000;
+    },
     setStartTime(state, action) {
       state.startTime = action.payload;
     },

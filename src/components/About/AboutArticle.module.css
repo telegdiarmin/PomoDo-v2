@@ -21,8 +21,8 @@
 .aboutArticle p {
   margin-bottom: 2rem;
   line-height: 2rem;
-  text-align: justify;
-  hyphens: auto;
+  text-align: left;
+  /* hyphens: auto; */
 }
 
 .aboutArticle p a {

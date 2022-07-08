@@ -5,6 +5,13 @@
   font-family: var(--font-p);
 }
 
+.highlight {
+  margin: 0 3px 0 3px;
+  padding: 5px;
+  background-color: var(--color-text-app-inactive-timer);
+  border-radius: 5px;
+}
+
 @media (max-width: 48rem) {
   .about {
     padding: 3rem 5%;

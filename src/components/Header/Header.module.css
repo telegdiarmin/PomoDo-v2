@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  align-items: baseline;
+  width: 30rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  margin-top: 1rem;
+  margin-bottom: auto;
+  padding-bottom: 0.5rem;
+}
+
+.header img {
+  width: 30px;
+  height: 30px;
+}
+
+.header h2 {
+  font-family: var(--font-h2);
+  font-size: 1.5rem;
+  color: white;
+  margin-left: 0.5rem;
+}
+
+.header p {
+  font-family: var(--font-p);
+}
+
+.header .aboutBtn {
+  box-sizing: content-box;
+  margin-left: auto;
+  width: 80px;
+  background-color: transparent;
+  border: 1px solid var(--color-button-normal);
+  color: var(--color-button-normal);
+  box-shadow: none;
+}
+
+.header .aboutBtn:hover {
+  background-color: var(--color-button-hover);
+  color: var(--color-text-modal);
+}
+
+@media (max-width: 48rem) {
+  .header {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}

@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import Header from "../Header/Header";
 import MainButton from "../MainButton/MainButton";
 import MainButtonBgr from "../MainButton/MainButtonBgr";
 import MainButtonSettings from "../MainButton/MainButtonSettings";
@@ -27,8 +28,6 @@ const Counter = () => {
     (state) => state.ui.isAboutSectionVisible
   );
 
-  // const [timerMode, setTimerMode] = useState(mode);
-
   console.log("Component loaded!");
   console.log("Counter is running: " + isRunning);
 
@@ -48,11 +47,6 @@ const Counter = () => {
     dispatch(uiActions.toggleSettingsModal());
   };
 
-  // useEffect(() => {
-  //   setTimerMode(mode);
-  //   // console.log(timerMode);
-  // }, [mode]);
-
   return (
     <section
       className={`${classes.counter} ${
@@ -62,17 +56,14 @@ const Counter = () => {
       }`}
     >
       <div ref={counterRef} />
+      <Header />
       <ModeSelector />
       <CounterFrame />
       <MainButtonBgr>
         <MainButton
-          className={`${
-            mode === "timer" ? classes.modeMainButtonTimer : ""
-          } ${
+          className={`${mode === "timer" ? classes.modeMainButtonTimer : ""} ${
             mode === "shortBreak" ? classes.modeMainButtonShortBreak : ""
-          } ${
-            mode === "longBreak" ? classes.modeMainButtonLongBreak : ""
-          }`}
+          } ${mode === "longBreak" ? classes.modeMainButtonLongBreak : ""}`}
           onClick={mainButtonClickHandler}
           mainButtonText={isRunning ? "STOP" : "START"}
         ></MainButton>

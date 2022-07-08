@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   isBackdropVisible: false,
   isSettingsModalVisible: false,
+  isMessageModalVisible: false,
   isAboutSectionVisible: false,
 };
 
@@ -15,6 +16,9 @@ const uiSlice = createSlice({
       },
       toggleSettingsModal(state) {
         state.isSettingsModalVisible = !state.isSettingsModalVisible;
+      },
+      toggleMessageModal(state) {
+        state.isMessageModalVisible = !state.isMessageModalVisible;
       },
       toggleAboutSection(state) {
         state.isAboutSectionVisible = !state.isAboutSectionVisible;
